@@ -22,6 +22,10 @@
   --radius: 8px;
   --radius-lg: 12px;
   --transition: 0.2s ease;
+  /* Responsive padding - scales across devices */
+  --padding-x: clamp(1rem, 4vw, 2rem);
+  --padding-y: clamp(2rem, 5vw, 4rem);
+  --padding-section: clamp(2.5rem, 6vw, 4rem);
 }
 
 *,
@@ -32,6 +36,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -81,11 +86,12 @@ p {
   width: 100%;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 1.25rem;
+  padding-left: max(var(--padding-x), env(safe-area-inset-left));
+  padding-right: max(var(--padding-x), env(safe-area-inset-right));
 }
 
 .section {
-  padding: 4rem 0;
+  padding: var(--padding-section) 0;
 }
 
 .section--alt {
@@ -120,7 +126,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: clamp(0.75rem, 2vw, 1.25rem) 0;
   gap: 1rem;
 }
 
@@ -187,7 +193,8 @@ p {
   height: 100vh;
   background: var(--color-white);
   box-shadow: var(--shadow-lg);
-  padding: 2rem;
+  padding: clamp(1.5rem, 5vw, 2rem);
+  padding-right: max(clamp(1.5rem, 5vw, 2rem), env(safe-area-inset-right));
   transform: translateX(100%);
   transition: transform var(--transition);
   z-index: 200;
@@ -294,7 +301,7 @@ p {
 .hero {
   background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 50%, var(--color-primary-light) 100%);
   color: var(--color-white);
-  padding: 4rem 0 5rem;
+  padding: clamp(2.5rem, 8vw, 4rem) 0 clamp(3rem, 10vw, 5rem);
   text-align: center;
 }
 
@@ -317,7 +324,7 @@ p {
 /* Cards */
 .card-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: clamp(1rem, 3vw, 1.5rem);
 }
 
 @media (min-width: 640px) {
@@ -333,7 +340,7 @@ p {
   background: var(--color-white);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  padding: 1.75rem;
+  padding: clamp(1.25rem, 4vw, 1.75rem);
   transition: box-shadow var(--transition), transform var(--transition);
   border: 1px solid var(--color-neutral-100);
 }
@@ -368,7 +375,7 @@ p {
 .cta-strip {
   background: var(--color-primary);
   color: var(--color-white);
-  padding: 2.5rem 0;
+  padding: clamp(1.5rem, 5vw, 2.5rem) 0;
   text-align: center;
 }
 
@@ -386,13 +393,14 @@ p {
 .site-footer {
   background: var(--color-neutral-900);
   color: var(--color-neutral-300);
-  padding: 3rem 0 2rem;
+  padding: clamp(2rem, 5vw, 3rem) 0 clamp(1.5rem, 4vw, 2rem);
+  padding-bottom: max(clamp(1.5rem, 4vw, 2rem), env(safe-area-inset-bottom));
 }
 
 .footer-grid {
   display: grid;
-  gap: 2rem;
-  margin-bottom: 2rem;
+  gap: clamp(1.5rem, 4vw, 2rem);
+  margin-bottom: clamp(1.5rem, 4vw, 2rem);
 }
 
 @media (min-width: 640px) {
@@ -460,7 +468,7 @@ p {
 /* Page headers */
 .page-hero {
   background: var(--color-neutral-100);
-  padding: 2.5rem 0;
+  padding: clamp(1.5rem, 5vw, 2.5rem) 0;
   text-align: center;
 }
 
@@ -511,7 +519,7 @@ p {
 /* Two-column layout */
 .two-col {
   display: grid;
-  gap: 2rem;
+  gap: clamp(1.5rem, 4vw, 2rem);
   align-items: start;
 }
 
@@ -584,8 +592,8 @@ p {
 .contact-info-card {
   background: var(--color-neutral-50);
   border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  margin-top: 2rem;
+  padding: clamp(1.25rem, 3vw, 1.5rem);
+  margin-top: clamp(1rem, 3vw, 2rem);
 }
 
 .contact-info-card h3 {

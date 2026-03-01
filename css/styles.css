@@ -404,7 +404,7 @@ p {
 }
 
 .footer-logo {
-  height: 44px;
+  height: 80px;
 }
 
 .footer-brand .logo {
@@ -447,6 +447,14 @@ p {
   text-align: center;
   font-size: 0.875rem;
   color: var(--color-neutral-600);
+}
+
+.footer-bottom a {
+  color: var(--color-neutral-300);
+}
+
+.footer-bottom a:hover {
+  color: var(--color-white);
 }
 
 /* Page headers */
@@ -590,6 +598,21 @@ p {
 
 .contact-info-card a {
   font-weight: 500;
+}
+
+/* Policy / Legal content */
+.policy-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+}
+
+.policy-content h2:first-of-type {
+  margin-top: 0;
+}
+
+.policy-content ul {
+  margin-bottom: 1rem;
 }
 
 /* Utility */
